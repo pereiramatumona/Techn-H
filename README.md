@@ -3,7 +3,7 @@ Automação residencial
 
 ## Definição 
 
-API nodejs com from-end html css e js, para cimular uma aplicação paa automação residencial 
+API nodejs com from-end html css e js, para simular uma aplicação paa automação residencial 
 
 
 ## Quick Start
