@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="img/icon.jpg">
+    <title>TECHNO-H</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <script src="socket.io.js"></script>
+    
+    
+</head>
+<body>
+    <div  id='main' class="container">
+        <div class="cabecalho">
+            <div  id="home_tag" class="home_tag">
+                <img  id="home_tag" src="img/home&food_p.png" alt="" width="35px" height="30px">
+            </div>
+            <div class="online_tag">
+                <img id="onlineImg" src="img/Globe_off.png" alt="">
+                <h4 id="onlineTx">Offline</h4>
+            </div>
+            
+            <div class="titulo_tag">
+                <img src="img/button.png" alt="HOME" height="40">
+                <h3 id="titulo_dash">HOME</h3>
+            </div>
+            <div class="login">
+                <h4 class="userlabel1">User: </h4>
+                <h4 class="userlabel2">Pereira</h4>
+            </div>
+
+            <div class="exit_bt">
+                <img src="img/powerBt.png" alt="">
+            </div>
+        </div>
+        
+        <div class="dashboard fadeIn">
+            <div id="principal" class="principal_class tela fadeIn">
+                
+                <div class="principal_up principal_filhos">
+                    <div class="principal_up_left" >
+                        <h2 id="bomdia">BOM DIA</h2>
+                        <h2 id="dsemana"> Segunda Feira</h2>
+                        <h2 id="data">01 janeiro 2019</h2>
+                        <h2 id="hora">12:00:12</h2>
+                        <h3 id="temp1">15ºC Sala</h3>
+                        <h3 id="temp1">24ºC Fora</h3>
+                    </div>
+                    <div class="principal_up_center" >
+                        <h2 class="mensagens_dia"> </h2>
+                        <img  id="imagemCeu" class="imagemCeu" src="img/bom-dia.png" alt="">
+                    </div>
+                    <div class="principal_up_right" >
+                        <h3>   </h3>
+                        
+                    </div>
+                </div>
+                <div class="principal_down principal_filhos">
+                    <div class="p_down_left" >
+                        <div class="dash_mplayer_music">
+                            <div class="mp_image">
+                                <img src="img/musicais.png" alt="" width="80px" height="60px">
+                            </div>
+                            <div class="mp_titulos mp_info">
+                                <label for="">Titulo</label>
+                                <label for="">Autor</label>
+                                <label for="">ALbum</label>
+                            </div>
+                            <div class="mp_info mp_info">
+                                    <strong><label for="">High Speed</label></strong> 
+                                    <strong><label for="">Tupac</label></strong> 
+                                    <strong><label for="">Still I Rise</label></strong> 
+                            </div>
+                        </div> 
+                        <div class="music_bar"> <span class="music_progress"></span> </div>
+                        <div class="dash_mplayer_comandos">
+                            <img id="" class="mp_bt" src="img/mplayer_back.png" alt="" width="30px">
+                            <img id="mpPlay" class="mp_bt" src="img/mplayer_play.png" alt="" width="30px">
+                            <img id="" class="mp_bt" src="img/mplayer_forword.png" alt="" width="30px">  
+                            
+                        </div>
+                    </div>
+                    <div class="p_do    wn_center" >
+                        <div class="alarm_keyboard alarm">
+                            
+                                <div id="um" class="k1">1</div>
+                                <div id="dois" class="dois k1">2</div>
+                                <div id="tres" class="tres k1">3</div>
+                                <div id="quatro" class="quatro k1">4</div>
+                                <div id="cinco" class="cinco k1">5</div>
+                                <div id="seis" class="seis k1">6</div>
+                                <div id="sete" class="sete k1">7</div>
+                                <div id="oito" class="oito k1">8</div>
+                                <div id="nove" class="nove k1">9</div>
+                                <div id="cls" class="dez k1">C</div>
+                                <div id="zero" class="zero k1">0</div>
+                                <div id="kc" class="kc k1">#</div>
+                            
+                        </div>
+                        <div class="alarm_image alarm">
+                            <div  class="alarm_info"><h3 id="alarm_info">DESARMADO</h3></div>
+                            <div class="alarm_bt"> <img id="alarm_img" class="alarm_img"src="img/alarm.png" alt=""></div>
+                            <div id="alarm_sos" class="alarm_sos" ><h3>S.O.S</h3> </div>
+                        </div>
+                    </div>
+                    <div class="p_down_right" >
+                        <div class="cam_ent"></div>
+                        <div class="cam_ent_bt_block">
+                            <div class="cam_ent_bt1">
+                                <h4 class="portaoLabel">Pequena</h4>
+                                <img id="portaoPfechadura" src="img/cadeado-fechado.png" alt="" width="60px" height="60px">
+                                <div id="portaoPsimal" class="portaoSinal"></div>
+                            </div>
+                            <div class="cam_ent_bt2">
+                                <h4 class="portaoLabel" >Grande</h4>
+                                <img id="portaoGfechadura" src="img/cadeado-fechado.png" alt="" width="60px" height="60px">
+                                <div id="portaoGsimal" class="portaoSinal"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="iluminacao"  class="ilum_class tela fadeIn">
+                <div class="ilum_class1">
+                    <div class="ilum_class_up">
+                        <div class="lamp_sala lamp">
+                            <ul style="list-style-type:none;">
+                                <li class="lamp_img"><img id="salaLamp1" src="img/lamp-off.jpg" style="margin-top: 20px" alt="" width="40" height="50"></li>
+                                <li class="lamp_img"><img id="salaSancaLamp1" src="img/lamp-on.jpg" alt="" width="40" height="50"></li>
+                                <li class="lamp_img"><img id="salaLamp2" src="img/lamp-off.jpg" alt="" width="40" height="50"></li>
+                                <li class="lamp_img"><img id="salaSancaLamp2"src="img/lamp-off.jpg" alt="" width="40" height="50"></li>
+                            </ul>
+                            <ul style="list-style-type:none;">
+                                <li class="lamp_label"><h3 style="margin-top: 40px">Sala 1</h3></li>
+                                <li class="lamp_label"><h3>Sanca Sala 1</h3><li>
+                                <li class="lamp_label"><h3>Sala 2</h3></li>
+                                <li class="lamp_label"><h3>Sanca Sala 2</h3></li>
+                            </ul>
+                            <ul style="list-style-type:none;">
+                                <li class="lamp_range">
+                                    <input type="range" min="0" max="10" step="1">
+                                </li>
+                                <li class="lamp_range">
+                                    <input type="range" min="0" max="10" step="1">
+                                <li>
+                            </ul>
+                        </div>
+                        <div class="lamp_outros lamp">
+                            <ul style="list-style-type:none;">
+                                <li class="lamp_img"><img id="quartoLamp1" src="img/lamp-off.jpg" style="margin-top: 20px" alt="" width="40" height="50"></li>
+                                <li class="lamp_img"><img id="quartoLamp2" src="img/lamp-on.jpg" alt="" width="40" height="50"></li>
+                                <li class="lamp_img"><img id="quartoLamp3" src="img/lamp-off.jpg" alt="" width="40" height="50"></li>
+                                <li class="lamp_img"><img id="quartoLamp4" src="img/lamp-off.jpg" alt="" width="40" height="50"></li>
+                            </ul>
+                            <ul style="list-style-type:none;">
+                                <li class="lamp_label"><h3 style="margin-top: 40px">Quarto 1</h3></li>
+                                <li class="lamp_label"><h3>Quarto 2</h3><li>
+                                <li class="lamp_label"><h3>Quarto 3</h3></li>
+                                <li class="lamp_label"><h3>Quarto 4</h3></li>
+                            </ul>
+                            <ul style="list-style-type:none;">
+                                <li class="lamp_img"><img id="wcLamp" src="img/lamp-off.jpg" style="margin-top: 20px" alt="" width="40" height="50"></li>
+                                <li class="lamp_img"><img id="cozinhaLamp" src="img/lamp-on.jpg" alt="" width="40" height="50"></li>
+                                <li class="lamp_img"><img id="" src="img/lamp-off.jpg" alt="" width="40" height="50"></li>
+                                <li class="lamp_img"><img id="dispensaLamp" src="img/lamp-off.jpg" alt="" width="40" height="50"></li>
+                            </ul>
+                            <ul style="list-style-type:none;">
+                                <li class="lamp_label"><h3 style="margin-top: 40px">WC Int</h3></li>
+                                <li class="lamp_label"><h3>Cozinha</h3><li>
+                                <li class="lamp_label"><h3>Arrumos</h3></li>
+                                <li class="lamp_label"><h3>Dispensa</h3></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="ilum_class_down">
+                        <div class="lamp_suite lamp">
+                            <ul style="list-style-type:none;">
+                                <li class="lamp_img"><img id="suiteLamp" src="img/lamp-off.jpg" style="margin-top: 20px" alt="" width="40" height="50"></li>
+                                <li class="lamp_img"><img id="suiteCabLamp1" src="img/lamp-on.jpg" alt="" width="40" height="50"></li>
+                                <li class="lamp_img"><img id="suiteCabLamp2" src="img/lamp-off.jpg" alt="" width="40" height="50"></li>
+                                <li class="lamp_img"><img id="suiteSanca" src="img/lamp-off.jpg" alt="" width="40" height="50"></li>
+                            </ul>
+                            <ul style="list-style-type:none;">
+                                <li class="lamp_label"><h3 style="margin-top: 40px">Suite Principal</h3></li>
+                                <li class="lamp_label"><h3>Suite Cabeceira E</h3><li>
+                                <li class="lamp_label"><h3>Suite Cabeceira D</h3></li>
+                                <li class="lamp_label"><h3>Suite Sanca</h3></li>
+                            </ul>
+                            <ul style="list-style-type:none;">
+                                <li class="lamp_range_suit">
+                                    <input type="range" min="0" max="10" step="1" >
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lamp_fora lamp">
+                            <ul style="list-style-type:none;">
+                                <li class="lamp_img"><img src="img/lamp-on.jpg" style="margin-top: 20px" alt="" width="40" height="50"></li>
+                                <li class="lamp_img"><img id="quintalLamp" src="img/lamp-on.jpg" alt="" width="40" height="50"></li>
+                                
+                            </ul>
+                            <ul style="list-style-type:none;">
+                                <li class="lamp_label"><h3 style="margin-top: 40px">WC.Externo</h3></li>
+                                <li class="lamp_label"><h3>Fora Quintal</h3><li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                    
+            </div>
+            <div id="accesso"  class="accesso_class tela fadeIn">
+                <div class="access_dash">
+                    <div class="accesso_esquerdo">
+                        <div class="bt_bt">
+                            <img id="port_g_img" src="img/red_bt.ico" alt="">
+                            <img id="port_p_img" src="img/red_bt.ico" alt="">
+                            <img id="port_pr1_img" src="img/red_bt.ico" alt="">
+                            <img id="port_pr2_img" src="img/red_bt.ico" alt="">
+                            <img id="port_sui_img" src="img/red_bt.ico" alt="">
+                            <img id="port_q1_img" src="img/green_bt.ico" alt="">
+                            <img id="port_q2_img" src="img/red_bt.ico" alt="">
+                            <img id="port_q3_img" src="img/green_bt.ico" alt="">
+                        </div>
+                        <div class="bt_nome">
+                            <h3>Portão Grande</h3>
+                            <h3>Porta Pequena</h3>
+                            <h3>Porta Principal 1</h3>
+                            <h3>Porta Principal 2</h3>
+                            <h3>Porta Suite</h3>
+                            <h3>Porta Quarto 1</h3>
+                            <h3>Porta Quarto 2</h3>
+                            <h3>Porta Quarto 3</h3>
+
+                        </div>
+                        <div class="bt_estado">
+                            <h3 id="port_g_lb" >Fechada</h3>
+                            <h3 id="port_p_lb" >Fechada</h3>
+                            <h3 id="port_pr1_lb">Fechada</h3>
+                            <h3 id="port_pr2_lb">Fechada</h3>
+                            <h3 id="port_suit_lb">Fechada</h3>
+                            <h3 id="port_q1_lb" style="color: seagreen">Aberta</h3>
+                            <h3 id="port_q2_lb">Fechada</h3>
+                            <h3 id="port_q3_lb" style="color: seagreen" >Aberta</h3>
+                        </div>
+                    </div>
+                    <div class="accesso_criar_scen">
+                        CENARIOS 
+                    </div>
+                </div>
+            </div>
+            <div id="ac" class="ac_class tela fadeIn">
+                <div class="ac_dash">
+                    <div class="ac_dispositivo">
+                        <img src="img/AC1.png" alt="" width="90px" height="40"> 
+                        <ul style="list-style-type:none;">
+                            <li> <input type="radio" name="ac" id="acSalaAP" checked> AC Sala x2 </li>
+                            <li> <input type="radio" name="ac" id="acSuiteAP"> AC Suite x2</li>
+                            <li> <input type="radio" name="ac" id="acQuarto1AP"> AC Quarto 1</li>
+                            <li> <input type="radio" name="ac" id="acQuarto2AP"> AC Quarto 2</li>
+                        </ul>
+                        
+                    </div>
+                    <div class="ac_comandos">
+                        <div class="ac_command_box1">
+                                <img id="acPWR" src="img/shutdown_icon.png" alt="" width="40px" height="40px">
+                        </div>
+                        <div class="ac_command_box2" >
+                            <div id="acTempUP" class="ac_bt_mais ac_bts">TEMP+</div> 
+                            <div id="acMODE" class="ac_bt_mode ac_bts">MODE</div>
+                        </div>
+                        <div class="ac_command_box2" >
+                            <div id="acTempDOWN" class="ac_bt_mais ac_bts">TEMP-</div>
+                            <div id="acFAN" class="ac_bt_mode ac_bts">FAN </div>
+                        </div>
+
+                    </div>
+                    <div class="ac_info">
+                            <h4>CONTROLE REMOTE</h4>
+
+                    </div>
+
+                </div>
+                
+            </div>
+            <div id="multimedia"  class="multimedia_class tela fadeIn">
+                <div class="multimedia">
+                    <div class="mm_dispositivo">
+                        <ul style="list-style-type:none;">
+                            <li> <input id="mmTVAP" type="radio" name="remote_c" id="radio_tv" checked> TV </li>
+                            <li> <input id="mmDecoderAP" type="radio" name="remote_c" id="radio_decoder"> Decoder</li>
+                            <li> <input id="mmDVD" type="radio" name="remote_c" id="radio_dvd"> DVD/SOM</li>
+                        </ul>
+                        
+                        <img src="img/remote.png" alt="" width="200px" height="200">
+                    </div>
+                    <div class="mm_cremoto">
+                        <div  id="mmPWR" class="mm_pw_bt mm_bt">PWR</div> 
+                        
+                        <div class="">
+                        </div>
+                         <div id="mmSRC" class="mm_src_bt mm_bt">SOURCE</div>
+                        
+                        <div class=""></div> <div class=""></div> <div class="mm_voll_bt"></div>
+                        <div id="mmVolDOWN" class="mm_voll_bt mm_bt">VOL-</div> 
+                        <div id="mmUP" class="mm_bt">
+                            <img src="img/navigate_up.ico" width="40px" height="40px" alt="">
+                        </div> 
+                        <div id="mmVolUP" class="mm_volp_bt mm_bt">VOL+</div>
+                        <div id="mmLEFT" class="mm_volp_bt mm_bt">
+                            <img src="img/navigate_left.ico" width="40px" height="40px" alt="">
+                        </div> 
+                        <div id="mmCENTER" class="mm_bt">
+                            <img src="img/nav_plain_blue.ico" width="40px" height="40px" alt="">
+                        </div> 
+                        <div id="mmRIGHT" class="mm_voll_bt mm_bt">
+                            <img src="img/navigate_right.ico" width="40px" height="40px" alt="">
+                        </div>
+                        <div id="mmMUTE" class="mm_volp_bt mm_bt">MUTE</div> 
+                        <div id="mmDOWN" class="mm_bt">
+                            <img src="img/navigate_down.ico" width="40px" height="40px" alt="">
+                        </div> 
+                        <div id="mmBACK" class="mm_voll_bt mm_bt">BACK</div>
+                        <div id="mm1" class="mm_volp_bt mm_bt">1</div> <div id="mm2" class="mm_bt">2</div> <div id="mm3" class="mm_voll_bt mm_bt">3</div>
+                        <div id="mm4" class="mm_volp_bt mm_bt">4</div> <div id="mm5" class="mm_bt">5</div> <div id="mm6" class="mm_voll_bt mm_bt">6</div>
+                        <div id="mm7" class="mm_volp_bt mm_bt">7</div> <div id="mm8" class="mm_bt">8</div> <div id="mm9" class="mm_voll_bt mm_bt">9</div>
+                        <div class=""></div> <div id="mm0" class="mm_bt">0</div> <div class=""></div>
+                    </div>
+                    <div class="mm_mplayer">
+                        <div class="mp_list">
+                            <input type="text" value="" placeholder="Procurar...">  
+                            <ul class="music_list" style="list-style-type:none;">
+                                <!--<li id="retrocedeDir"> <img src="img/folder_out.ico" id="" width="30px" height="30px"> \</li>
+                                <li> <img src="img/folder.ico" alt="" srcset="" width="30px" height="30px"> Pasta</li>
+                                <li> <img src="img/folder.ico" alt="" srcset="" width="30px" height="30px"> Pasta</li>
+                                <li> <img src="img/folder.ico" alt="" srcset="" width="30px" height="30px"> Pasta</li>
+                                <li> <img src="img/folder.ico" alt="" srcset="" width="30px" height="30px"> Pasta</li>
+                                <li> <img src="img/folder.ico" alt="" srcset="" width="30px" height="30px"> Pasta</li>
+                                <li> <img src="img/folder.ico" alt="" srcset="" width="30px" height="30px"> Pasta</li>
+                                <li> <img src="img/document_music.ico" alt="" srcset="" width="30px" height="30px"> Music</li>
+                                <li> <img src="img/document_music.ico" alt="" srcset="" width="30px" height="30px"> Music</li>
+                                <li> <img src="img/document_music.ico" alt="" srcset="" width="30px" height="30px"> Music</li>
+                                <li> <img src="img/document_music.ico" alt="" srcset="" width="30px" height="30px"> Music</li>-->
+                            </ul>
+                        </div>
+                        <div class="mp_player">
+                            <div class="music_up">
+                                <div class="mp_disc">
+                                    <img src="img/musicais.png" width="60px" height="60px" alt="">
+                                </div>
+                                <div class="music_label">
+                                    <label for="">Titulo</label>
+                                    <label for="">Autor</label>
+                                    <label for="">ALbum</label>
+                                </div>
+                                <div class="music_actual_label"><strong>
+                                    <label for="">High Speed</label><br>
+                                    <label for="">Tupac</label> <br>
+                                    <label for="">Still I Rise</label> <br>
+                                </strong></div>
+                            </div>
+                            <div class="music_bar1"> meu<span class="music_progress1"></span> </div>
+                            <div class="mp_comandos">
+                                <div>00:00</div>
+                                <div></div>
+                                <div class="mplayer_bt"><img src="img/mplayer_back.png" alt="" width="40px" height="40px"></div>
+                                <div id="" class="mplayer_bt"><img id="mpPlay"src="img/mplayer_play.png" ></div>
+                                <div class="mplayer_bt"><img src="img/mplayer_forword.png" alt="" width="40px" height="40px">
+                                <mp></mp></div>
+                                <div></div>
+                                <div>4:00</div>
+
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="camera" class="cameras_class tela fadeIn">
+                <div id="cam1" class="cam">
+                    <h4>CAM1</h4>
+                </div>
+                <div id="cam2" class="cam">
+                    <h4>CAM2</h4>
+                </div>
+                <div id="cam3" class="cam">
+                    <h4>CAM3</h4>
+                </div>
+                <div id="cam4" class="cam">
+                    <h4>CAM4</h4>
+                </div>
+                    
+                <div id="cam5" class="cam">
+                    <h4>CAM5</h4>
+                </div>
+                <div id="cam6" class="cam">
+                    <h4>CAM6</h4>
+                </div>
+            </div>
+            <div id="definicoes" class="definicoes_class tela fadeIn">
+                <h1>DEFINIÇÔES</h1>
+            </div>
+        </div>
+        <div id="bts" class="menus" >
+            <div id="menulamp" class="menu menulamp">
+                <div id="menulamp" class="imagemenu">
+                    <img id="menulamp" src="img/lampada_menu.png" alt="" width="60px" height="70px"> 
+                </div>
+                <h3>ILUMINAÇÂO</h3> 
+            </div>
+            <div id="menusaccesso" class="menu menusaccesso">
+                <div id="menusaccesso" class="imagemenu">
+                    <img id="menusaccesso" src="img/lock.png" alt="" width="60px" height="70px">
+                </div>
+                <h3>ACCESSO</h3>
+                
+            </div>
+            <div id="menusac" class="menu menusac">
+                <div id="menusac" class="imagemenu">
+                    <img id="menusac" src="img/AC1.png" alt="" width="80px" height="60px">
+                </div>
+                <h3>AC</h3>
+            </div>
+            <div id="menumultimedia" class="menu menumultimedia">
+                <div id="menumultimedia" class="imagemenu">
+                    <img id="menumultimedia" src="img/multimedia1.png" alt="" width="60px" height="70px">
+                </div>
+                <h3>MULTIMÉDIA</h3>
+            </div>
+            <div id="menucameras" class="menu menucameras">
+                <div id="menucameras" class="imagemenu">
+                    <img id="menucameras" src="img/Camera.png" alt="" width="60px" height="70px">
+                </div>
+                <h3>CAMERAS</h3>
+                
+            </div>
+            <div id="menudefinocoes" class="menu menudefinocoes">
+                <div id="menudefinocoes" class="imagemenu">
+                    <img id="menudefinocoes" src="img/Settings-icon.png" alt="" width="60px" height="70px" >
+                </div>
+                <h3>DEFINIÇÕES</h3>
+                
+            </div>
+        </div>
+        
+    </div>
+    <script src="client.js"></script>
+    <script src="style.js"></script>
+</body>
+</html>
