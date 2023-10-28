@@ -13,5 +13,7 @@ API nodejs com from-end html css e js, para simular uma aplicação paa automaç
 3. Na maquina client ou na mesma maquina, no browser colocar o endereço seguido da porta de conexão <strong> http://localhost:8080/ </strong>
 
 ## screeshot
+<br>
+<img src='https://github.com/pereiramatumona/Techn-H/blob/main/Tech-H.png'>
 
 
